@@ -4,3 +4,22 @@ spring:
     username: root
     password: ""
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+question:
+  name-length: 10
+
+questions:
+  - name: bla
+    length: 5
+  - name: bla
+    length: 5
+  - name: bla
+    length: 5

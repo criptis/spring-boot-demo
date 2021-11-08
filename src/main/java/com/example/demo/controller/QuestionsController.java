@@ -27,15 +27,15 @@ public class QuestionsController {
 
   @PostMapping()
   public void createQuestion(@RequestBody QuestionRequest questionRequest) {
-
+    questionService.create(questionRequest);
   }
 
-  @PutMapping("/:id")
+  @PutMapping("/{id}")
   public void updateQuestion(@RequestBody QuestionRequest questionRequest, @PathVariable("id") String id) {
 
   }
 
-  @GetMapping("name/:name")
+  @GetMapping("name/{name}")
   public QuestionResponse getQuestionByName(@PathVariable("name") String name) {
     val entity = questionService.getByName(name);
     return new QuestionResponse(entity.getKryId(), entity.getName());
